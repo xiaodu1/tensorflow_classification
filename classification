@@ -26,6 +26,7 @@ def compute_accuracy(v_xs,v_ys):       #计算准确度
                                                             #所在的索引
     accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32))
                                                             #tf.cast转换数据类型
+                                                            #将bool型变量转换成float型，就能将其转换为0和1的序列
                                                             #计算多少个是对的多少个是错的
     result =sess.run(accuracy,feed_dict={xs:v_xs,ys:v_ys})
     return result
